@@ -12,4 +12,10 @@ handlers:
   static_dir: images
 - url: /.*
   script: library.application
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
 

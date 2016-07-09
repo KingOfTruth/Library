@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <title>Library</title>
@@ -15,15 +14,19 @@
   </div>
 
 <div style="clear: both;"/>  
-
 {# Check if any book had been issued, only in this case render the table #}
 
 {% if numberbooks %}
-{% if nbook %}
-You have {{nbook}} books to be returned, please return ASAP .
-{% else %} 
-You have a total number of 0 books to be returned.
-{% endif %}
+You have <span id="myfun"> x </span> books to be returned, please return ASAP .
+
+<script>
+	var x={{nbook}};
+	if (x<=0) {
+		x=0;
+		}
+	document.getElementById("myfun").innerHTML = x;
+</script>
+
 <table>
   <tr>
     
